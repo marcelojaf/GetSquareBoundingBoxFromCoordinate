@@ -16,7 +16,7 @@ namespace MovingCoordinates
 
             Console.WriteLine("GET SQUARE BOUNDING BOX COORDINATES FROM A LOCATION AND RADIUS(IN METERS)!");
             Console.WriteLine("DECIMAL PLACES = 6");
-            Console.WriteLine("Enter the location latitude:");
+            Console.WriteLine("\r\nEnter the location latitude:");
             try
             {
                 centerLatitude = Convert.ToDouble(Console.ReadLine());
@@ -52,11 +52,14 @@ namespace MovingCoordinates
             GeoCoordinate bottomLeftCoordinates = lib.Offset(new GeoCoordinate(bottomCenter.Latitude, bottomCenter.Longitude), 270, distanceInMeters);
             GeoCoordinate bottomRightCoordinates = lib.Offset(new GeoCoordinate(bottomCenter.Latitude, bottomCenter.Longitude), 90, distanceInMeters);
 
-            Console.WriteLine("The 4 coordinates for the bounding box with the location provided are:");
+            Console.WriteLine("\r\nThe 4 coordinates for the bounding box with the location provided are:");
             Console.WriteLine($"Top-Left: Latitude:{String.Format("{0:0.000000}",topLeftCoordinates.Latitude)} | Longitude: {String.Format("{0:0.000000}", topLeftCoordinates.Longitude)}");
             Console.WriteLine($"Top-Right: Latitude:{String.Format("{0:0.000000}", topRightCoordinates.Latitude)} | Longitude: {String.Format("{0:0.000000}", topRightCoordinates.Longitude)}");
             Console.WriteLine($"Bottom-Left: Latitude:{String.Format("{0:0.000000}", bottomLeftCoordinates.Latitude)} | Longitude: {String.Format("{0:0.000000}", bottomLeftCoordinates.Longitude)}");
             Console.WriteLine($"Bottom-Right: Latitude:{String.Format("{0:0.000000}", bottomRightCoordinates.Latitude)} | Longitude: {String.Format("{0:0.000000}", bottomRightCoordinates.Longitude)}");
+
+            Console.WriteLine("\r\n\r\nPress enter to exit...");
+            Console.ReadLine();
         }
     }
 }
